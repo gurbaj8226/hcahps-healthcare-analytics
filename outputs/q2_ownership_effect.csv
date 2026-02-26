@@ -1,0 +1,11 @@
+ownership,hospitals,min_recommend_percent,max_recommend_percent,avg_recommend_percent,total_surveys,weighted_avg_recommend_percent
+Physician,48,48.00,96.00,83.708333,21763,80.449938
+"Department of Defense",26,63.00,91.00,76.384615,13599,78.590926
+"Veterans Health Administration",110,56.00,92.00,75.018182,42893,74.849229
+"Government - State",40,49.00,90.00,71.700000,51711,73.974222
+"Government - Hospital District or Authority",207,48.00,93.00,69.178744,154112,70.484998
+"Voluntary non-profit - Private",1549,34.00,96.00,69.377663,1135767,70.067648
+"Voluntary non-profit - Other",263,45.00,94.00,68.912548,167788,69.469485
+"Voluntary non-profit - Church",222,49.00,91.00,68.531532,151142,69.463630
+"Government - Local",156,51.00,93.00,69.314103,70594,68.220090
+Proprietary,528,33.00,94.00,65.420455,271180,64.618497
