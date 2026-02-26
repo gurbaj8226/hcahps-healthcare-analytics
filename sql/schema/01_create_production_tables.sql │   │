@@ -1,0 +1,50 @@
+-- =========================================================
+-- 01_create_production_tables.sql
+-- Purpose: Production schema (typed tables)
+-- Database: hcahps_project
+-- =========================================================
+
+CREATE DATABASE IF NOT EXISTS hcahps_project;
+USE hcahps_project;
+
+-- -------------------------
+-- Dimension: hospital_info_raw
+-- -------------------------
+-- DROP TABLE IF EXISTS hospital_info_raw;
+
+CREATE TABLE IF NOT EXISTS hospital_info_raw (
+    facility_id VARCHAR(10) NOT NULL,
+    facility_name VARCHAR(150),
+    state CHAR(2),
+    hospital_type VARCHAR(100),
+    hospital_ownership VARCHAR(150),
+    emergency_services VARCHAR(20),
+    hospital_overall_rating TINYINT,
+    PRIMARY KEY (facility_id),
+    INDEX idx_state (state),
+    INDEX idx_ownership (hospital_ownership),
+    INDEX idx_type (hospital_type),
+    INDEX idx_rating (hospital_overall_rating)
+);
+
+-- -------------------------
+-- Fact: hcahps_raw
+-- Grain: facility_id + measure_id + answer_description + start_date
+-- -------------------------
+-- DROP TABLE IF EXISTS hcahps_raw;
+
+CREATE TABLE IF NOT EXISTS hcahps_raw (
+    facility_id VARCHAR(10) NOT NULL,
+    measure_id VARCHAR(50) NOT NULL,
+    question TEXT,
+    answer_description VARCHAR(150) NOT NULL,
+    answer_percent DECIMAL(5,2),
+    linear_mean_value DECIMAL(6,2),
+    completed_surveys INT,
+    response_rate_percent DECIMAL(5,2),
+    start_date DATE NOT NULL,
+    end_date DATE,
+    PRIMARY KEY (facility_id, measure_id, answer_description, start_date),
+    INDEX idx_measure (measure_id),
+    INDEX idx_period (start_date, end_date)
+);
