@@ -1,3 +1,7 @@
+-- Requires:
+--   - hospital_info_raw loaded
+--   - hcahps_raw loaded
+--   - Reporting period locked to 2024-01-01
 -- ============================================
 -- Q1: Rating vs Recommend Alignment
 -- Dataset: CMS HCAHPS 2024
