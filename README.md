@@ -321,3 +321,16 @@ All SQL required to rebuild the pipeline is included in this repository.
 
 ---
 
+# Executive Summary
+
+Across 2024 CMS HCAHPS data, patient willingness to recommend hospitals demonstrates consistent alignment with CMS star ratings, increasing approximately 5 percentage points per star level. Ownership structure shows the largest categorical variation (~15.8 percentage point gap between highest and lowest ownership types), exceeding interstate differences (~10.7 percentage points). Geographic variation is present but clustered, with most states falling within a narrow performance band around the national average. While ratings and patient experience align at an aggregate level, approximately 5% of hospitals demonstrate meaningful divergence between star ratings and patient recommendation performance.
+
+---
+
+# Limitations
+
+* **Cross-sectional design:** Analysis is limited to a single reporting period (2024) and does not assess temporal trends or causality.
+* **No case-mix or complexity adjustment:** Differences by ownership and state may reflect variation in hospital size, service lines, patient acuity, or payer mix rather than structural effects alone.
+* **Survey-based metric:** The recommend percentage reflects patient-reported experience and may not capture broader clinical quality dimensions incorporated into CMS star ratings.
+
+---
