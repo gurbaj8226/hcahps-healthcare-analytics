@@ -149,10 +149,62 @@ CMS overall star ratings demonstrate a clear and consistent positive relationshi
 
 While ratings incorporate broader quality measures beyond satisfaction alone, higher-rated hospitals show meaningfully stronger patient recommendation rates.
 
-📊 See:
+See:
 
 * `outputs/q1_rating_alignment.csv`
 * `visuals/q1_rating_vs_recommend.png`
+
+---
+Here is your Q2 README section written in the exact same structure and tone as Q1.
+
+---
+
+## Q2 — Does Hospital Ownership Relate to Patient Experience?
+
+**Reporting Period:** 2024
+**Sample Size:** 3,964 hospitals with recommend data (ownership groups ≥ 25 hospitals; ≥100 completed surveys per hospital)
+
+### Method
+
+* Filter to measure `H_RECMND_DY`
+* Restrict to reporting period `2024-01-01`
+* Lock to answer category `"YES", patients would definitely recommend the hospital`
+* Exclude hospitals with fewer than 100 completed surveys
+* Require ownership groups to contain at least 25 hospitals
+* Compute:
+
+  * Average recommend percentage
+  * Weighted average using completed surveys
+
+### Results (Weighted)
+
+| Ownership Type                           | Recommend % |
+| ---------------------------------------- | ----------- |
+| Physician                                | 80.4%       |
+| Department of Defense                    | 78.6%       |
+| Veterans Health Administration           | 74.8%       |
+| Government – State                       | 74.0%       |
+| Government – Hospital District/Authority | 70.5%       |
+| Voluntary non-profit – Private           | 70.1%       |
+| Voluntary non-profit – Other             | 69.5%       |
+| Voluntary non-profit – Church            | 69.5%       |
+| Government – Local                       | 68.2%       |
+| Proprietary                              | 64.6%       |
+
+The gap between the highest and lowest ownership types is approximately **15.8 percentage points**.
+
+### Interpretation
+
+Hospital ownership structure is associated with meaningful differences in patient-reported willingness to recommend.
+
+Physician-owned and federal hospitals demonstrate the highest weighted recommendation rates, while proprietary hospitals show the lowest.
+
+Because results are weighted by survey volume, lower-performing high-volume ownership types represent larger population-level impact. These findings are associative rather than causal and likely reflect variation in hospital size, service mix, and patient complexity.
+
+See:
+
+* `outputs/q2_ownership_effect_weighted_thresholded.csv`
+* `visuals/q2_ownership_effect_weighted.png`
 
 ---
 
@@ -178,3 +230,4 @@ All SQL required to rebuild the pipeline is included in this repository.
 * Excel visualizations
 
 ---
+
