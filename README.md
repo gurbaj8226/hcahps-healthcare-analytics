@@ -264,7 +264,57 @@ See:
 * `visuals/q3_state_disparities_ranked.png`
 
 ---
+Excellent. Those are meaningful numbers.
 
+You have:
+
+* **43 hospitals** with rating ≥ 4 but bottom 20% recommend
+* **36 hospitals** with rating ≤ 2 but top 20% recommend
+
+That is not noise. That is real divergence.
+
+Here is your final Q4 README section in the exact same structure and tone as Q1–Q3.
+
+---
+
+## Q4 — Where Do CMS Ratings and Patient Experience Diverge?
+
+**Reporting Period:** 2024
+**Sample Size:** 2,843 hospitals with non-null star rating and ≥100 completed surveys
+
+### Method
+
+* Filter to measure `H_RECMND_DY`
+* Restrict to reporting period `2024-01-01`
+* Lock to answer category `"YES", patients would definitely recommend the hospital`
+* Exclude hospitals with fewer than 100 completed surveys
+* Exclude NULL star ratings
+* Rank hospitals into quintiles by recommend percentage using `NTILE(5)`
+* Flag:
+
+  * Rating ≥ 4 AND bottom quintile recommend %
+  * Rating ≤ 2 AND top quintile recommend %
+
+### Results
+
+* **43 hospitals** rated 4–5 stars fall into the bottom 20% of patient recommendation rates.
+* **36 hospitals** rated 1–2 stars fall into the top 20% of patient recommendation rates.
+
+These mismatches occur despite the overall positive relationship observed between star ratings and recommend rates in Q1.
+
+### Interpretation
+
+CMS star ratings and patient-reported recommendation rates generally align at the aggregate level (Q1). However, a meaningful subset of hospitals demonstrates divergence.
+
+Highly rated hospitals in the bottom quintile of patient recommendation suggest that CMS star ratings incorporate broader quality domains beyond patient satisfaction alone. Conversely, some lower-rated hospitals achieve top-tier patient recommendation performance.
+
+These outliers highlight the importance of examining hospital-level variation rather than relying solely on composite quality indicators.
+
+See:
+* `outputs/q4_ranked_dataset.csv`
+* `outputs/q4_high_rating_low_recommend.csv`
+* `outputs/q4_low_rating_high_recommend.csv`
+* `visuals/q4_rating_vs_recommend_scatter.png`
 
 # Reproducibility
 
