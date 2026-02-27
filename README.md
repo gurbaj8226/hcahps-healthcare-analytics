@@ -155,9 +155,6 @@ See:
 * `visuals/q1_rating_vs_recommend.png`
 
 ---
-Here is your Q2 README section written in the exact same structure and tone as Q1.
-
----
 
 ## Q2 — Does Hospital Ownership Relate to Patient Experience?
 
@@ -205,9 +202,6 @@ See:
 
 * `outputs/q2_ownership_effect.csv`
 * `visuals/q2_ownership_vs_recommend.png`
-
----
-Perfect — now we have the full ranked distribution. I’ll recreate Q3 cleanly and precisely using your actual output.
 
 ---
 
@@ -262,18 +256,6 @@ See:
 
 * `outputs/q3_state_disparities.csv`
 * `visuals/q3_state_disparities_ranked.png`
-
----
-Excellent. Those are meaningful numbers.
-
-You have:
-
-* **43 hospitals** with rating ≥ 4 but bottom 20% recommend
-* **36 hospitals** with rating ≤ 2 but top 20% recommend
-
-That is not noise. That is real divergence.
-
-Here is your final Q4 README section in the exact same structure and tone as Q1–Q3.
 
 ---
 
