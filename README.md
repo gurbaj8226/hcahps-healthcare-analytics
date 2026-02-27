@@ -203,10 +203,68 @@ Because results are weighted by survey volume, lower-performing high-volume owne
 
 See:
 
-* `outputs/q2_ownership_effect_weighted_thresholded.csv`
-* `visuals/q2_ownership_effect_weighted.png`
+* `outputs/q2_ownership_effect.csv`
+* `visuals/q2_ownership_vs_recommend.png`
 
 ---
+Perfect — now we have the full ranked distribution. I’ll recreate Q3 cleanly and precisely using your actual output.
+
+---
+
+## Q3 — Are There State-Level Disparities in Patient Experience?
+
+**Reporting Period:** 2024
+**Sample Size:** States with ≥ 20 hospitals and ≥ 100 completed surveys per hospital (41 states total)
+
+### Method
+
+* Filter to measure `H_RECMND_DY`
+* Restrict to reporting period `2024-01-01`
+* Lock to answer category `"YES", patients would definitely recommend the hospital`
+* Exclude hospitals with fewer than 100 completed surveys
+* Require states to contain at least 20 hospitals
+* Compute:
+
+  * Average recommend percentage
+  * Weighted average using completed surveys
+
+### Results (Weighted)
+
+#### Top Performing States
+
+| State         | Recommend % |
+| ------------- | ----------- |
+| Utah (UT)     | 75.3%       |
+| Kansas (KS)   | 74.2%       |
+| Idaho (ID)    | 74.1%       |
+| Colorado (CO) | 73.7%       |
+| Nebraska (NE) | 73.7%       |
+
+#### Lowest Performing States
+
+| State              | Recommend % |
+| ------------------ | ----------- |
+| New Mexico (NM)    | 64.6%       |
+| New York (NY)      | 64.8%       |
+| Michigan (MI)      | 65.3%       |
+| Arizona (AZ)       | 65.4%       |
+| West Virginia (WV) | 65.9%       |
+
+The gap between highest and lowest performing states is approximately **10.7 percentage points** (75.31% − 64.58%).
+
+### Interpretation
+
+Patient-reported hospital recommendation rates vary meaningfully by state. Mountain West and Plains states demonstrate consistently higher weighted recommendation rates, while several large and urbanized states show lower performance.
+
+Because results are weighted by survey volume and filtered for minimum hospital thresholds, differences are unlikely to reflect sampling noise. Instead, disparities may reflect variation in healthcare system structure, patient complexity, hospital density, and regional operational dynamics.
+
+See:
+
+* `outputs/q3_state_disparities.csv`
+* `visuals/q3_state_disparities_ranked.png`
+
+---
+
 
 # Reproducibility
 
